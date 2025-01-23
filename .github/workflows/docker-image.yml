@@ -1,4 +1,4 @@
-name: ci
+ name: ci
 
 on:
   push:
@@ -63,12 +63,12 @@ jobs:
           image-ref: ${{ env.TEST_TAG }}
           exit-code: 0
           format: 'sarif'
-         output: 'trivy-results.sarif'
+          output: 'trivy-results.sarif'
       
       - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@v3
-       with:
-       sarif_file: trivy-results.sarif
+        with:
+          sarif_file: trivy-results.sarif
       #######################################
           
       - name: Build and push
